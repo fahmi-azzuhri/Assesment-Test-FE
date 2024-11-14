@@ -72,7 +72,7 @@ function App() {
               )}
             </IconButton>
           </div>
-          <button className="py-2 px-4 rounded-lg bg-secondary-500 hover:bg-secondary-600 text-neutral-500 text-medium">
+          <button className="py-2 px-4 rounded-lg bg-secondary-500 hover:bg-secondary-400 text-neutral-500 text-medium">
             Mitra Petani
           </button>
         </div>
