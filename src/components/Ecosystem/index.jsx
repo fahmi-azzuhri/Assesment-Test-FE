@@ -9,7 +9,7 @@ function Ecosystem() {
   return (
     <div className="flex flex-col items-center space-y-12">
       <div className="text-center">
-        <h2 className="text-green-600 text-2xl font-bold">
+        <h2 className="text-green-500 text-2xl font-bold">
           Menuju Ekosistem yang Lebih Kuat Bersama Eratani
         </h2>
         <div className="grid grid-cols-2 gap-8 mt-8">
