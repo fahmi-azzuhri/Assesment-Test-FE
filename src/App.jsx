@@ -28,7 +28,7 @@ function App() {
         <div className="flex items-center justify-between">
           <img
             src={logo_eratani}
-            className=" sm:h-8 md:h-12 lg:h-16 w-auto cursor-pointer"
+            className="h-8 lg:h-12 w-auto cursor-pointer"
             alt=""
             onClick={() => navigate("/")}
           />
@@ -72,6 +72,9 @@ function App() {
               )}
             </IconButton>
           </div>
+          <button className="py-2 px-4 rounded-lg bg-secondary-500 hover:bg-secondary-600 text-neutral-500 text-medium">
+            Mitra Petani
+          </button>
         </div>
 
         <Collapse open={openNav} className="lg:hidden">
