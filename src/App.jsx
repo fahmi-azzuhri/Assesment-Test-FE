@@ -3,6 +3,7 @@ import logo_eratani from "/img/logo_eratani.png";
 import { useNavigate } from "react-router-dom";
 import { IconButton, Collapse } from "@material-tailwind/react";
 import AppRoutes from "./routes";
+
 function App() {
   const [openNav, setOpenNav] = useState(false);
 
@@ -12,6 +13,7 @@ function App() {
     "Tips & Berita Pertanian",
     "Kegiatan",
   ];
+
   const navList = (
     <ul className="mt-2 flex flex-col text-neutral-500 gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {textNavbar.map((item, index) => (
@@ -21,7 +23,9 @@ function App() {
       ))}
     </ul>
   );
+
   const navigate = useNavigate();
+
   return (
     <>
       <nav className="sticky top-0 z-20 max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-white rounded-lg border border-gray-300">
@@ -29,7 +33,7 @@ function App() {
           <img
             src={logo_eratani}
             className="h-8 lg:h-12 w-auto cursor-pointer"
-            alt=""
+            alt="Logo"
             onClick={() => navigate("/")}
           />
           <div className="flex items-center gap-4">
@@ -72,13 +76,18 @@ function App() {
               )}
             </IconButton>
           </div>
-          <button className="py-2 px-4 rounded-lg bg-secondary-500 hover:bg-secondary-400 text-neutral-500 text-medium">
+          <button className="py-2 px-4 rounded-lg bg-secondary-500 hover:bg-secondary-400 text-neutral-500 text-medium hidden lg:block">
             Mitra Petani
           </button>
         </div>
 
         <Collapse open={openNav} className="lg:hidden">
-          {openNav && <div className="block lg:hidden">{navList}</div>}
+          <div className="block lg:hidden">
+            {navList}
+            <button className="py-2 px-4 mt-4 rounded-lg bg-secondary-500 hover:bg-secondary-400 text-neutral-500 text-medium w-full">
+              Mitra Petani
+            </button>
+          </div>
         </Collapse>
       </nav>
 
