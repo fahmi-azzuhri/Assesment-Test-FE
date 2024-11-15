@@ -1,7 +1,9 @@
 import React from "react";
-import Jumbotron from "../Jumbotron";
-import Ecosystem from "../Ecosystem";
-import FarmerCare from "../FarmerCare";
+import Jumbotron from "../Section/Jumbotron";
+import Ecosystem from "../Section/Ecosystem";
+import FarmerCare from "../Section/FarmerCare";
+import Testimonials from "../Section/Testimonials";
+import OurMitra from "../Section/OurMitra";
 
 function Home() {
   return (
@@ -12,6 +14,12 @@ function Home() {
       </div>
       <div className="p-7 mt-10 bg-white">
         <FarmerCare />
+      </div>
+      <div className="p-7 mt-10 bg-white">
+        <Testimonials />
+      </div>
+      <div className="p-7 mt-10 bg-white">
+        <OurMitra />
       </div>
     </div>
   );
