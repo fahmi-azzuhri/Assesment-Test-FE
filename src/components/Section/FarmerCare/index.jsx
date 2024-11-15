@@ -6,7 +6,7 @@ import distribusi from "/img/distribusi.png";
 function FarmerCare() {
   return (
     <div className="flex flex-col items-center space-y-12 p-6">
-      <h2 className="flex text-green-500 text-2xl text-center font-bold sm:text-left">
+      <h2 className="flex text-primary-500 text-2xl text-center font-bold sm:text-left">
         Peduli Petani Bersama Eratani
       </h2>
       <div className="space-y-6 w-full max-w-xl">
