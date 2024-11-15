@@ -3,6 +3,7 @@ import logo_eratani from "/img/logo_eratani.png";
 import { useNavigate } from "react-router-dom";
 import { IconButton, Collapse } from "@material-tailwind/react";
 import AppRoutes from "./routes";
+import Footer from "./components/Footer";
 
 function App() {
   const [openNav, setOpenNav] = useState(false);
@@ -94,7 +95,7 @@ function App() {
       <div>
         <AppRoutes />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
