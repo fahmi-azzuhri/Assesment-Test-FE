@@ -4,12 +4,12 @@ function App() {
   const [datas, setDatas] = useState(data);
   const [search, setSearch] = useState("");
   const [edit, setEdit] = useState(null);
-  const [newRecord, setNewRecord] = useState({
-    firstName: "",
-    lastName: "",
+  const [newDatas, setNewDatas] = useState({
+    first_name: "",
+    last_name: "",
     email: "",
     gender: "",
-    ipAddress: "",
+    ip_address: "",
   });
 
   const filteredData = datas.filter((item) =>
@@ -17,6 +17,23 @@ function App() {
       values.toString().toLowerCase().includes(search.toLowerCase())
     )
   );
+
+  const addDatas = () => {
+    setDatas([
+      ...datas,
+      {
+        id: datas.length + 1,
+        ...newDatas,
+      },
+    ]);
+    setNewDatas({
+      first_name: "",
+      last_name: "",
+      email: "",
+      gender: "",
+      ip_address: "",
+    });
+  };
 
   return (
     <div className="container mx-auto p-6">
@@ -66,28 +83,47 @@ function App() {
           type="text"
           className="border p-2 rounded mb-2 mr-2"
           placeholder="First Name"
+          value={newDatas.first_name}
+          onChange={(e) =>
+            setNewDatas({ ...newDatas, first_name: e.target.value })
+          }
         />
         <input
           type="text"
           className="border p-2 rounded mb-2 mr-2"
           placeholder="Last Name"
+          value={newDatas.last_name}
+          onChange={(e) =>
+            setNewDatas({ ...newDatas, last_name: e.target.value })
+          }
         />
         <input
           type="text"
           className="border p-2 rounded mb-2 mr-2"
           placeholder="Email"
+          value={newDatas.email}
+          onChange={(e) => setNewDatas({ ...newDatas, email: e.target.value })}
         />
         <input
           type="text"
           className="border p-2 rounded mb-2 mr-2"
           placeholder="Gender"
+          value={newDatas.gender}
+          onChange={(e) => setNewDatas({ ...newDatas, gender: e.target.value })}
         />
         <input
           type="text"
           className="border p-2 rounded mb-2"
           placeholder="IP Address"
+          value={newDatas.ip_address}
+          onChange={(e) =>
+            setNewDatas({ ...newDatas, ip_address: e.target.value })
+          }
         />
-        <button className="bg-green-500 text-white px-4 py-2 rounded">
+        <button
+          onClick={addDatas}
+          className="bg-green-500 text-white px-4 py-2 rounded"
+        >
           Add Record
         </button>
       </div>
