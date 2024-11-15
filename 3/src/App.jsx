@@ -43,6 +43,9 @@ function App() {
     setEdit(null);
   };
 
+  const deleteData = (id) => {
+    setDatas(datas.filter((item) => item.id !== id));
+  };
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-4">CRUD Table</h1>
@@ -171,7 +174,10 @@ function App() {
                 >
                   Edit
                 </button>
-                <button className="bg-red-500 text-white px-2 py-1 rounded">
+                <button
+                  onClick={() => deleteData(item.id)}
+                  className="bg-red-500 text-white px-2 py-1 rounded"
+                >
                   Delete
                 </button>
               </td>
