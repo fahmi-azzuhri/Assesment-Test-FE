@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo_eratani from "/img/logo_eratani.png";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IconButton, Collapse } from "@material-tailwind/react";
 import AppRoutes from "./routes";
 import Footer from "./components/Footer";
