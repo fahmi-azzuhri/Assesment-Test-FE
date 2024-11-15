@@ -5,12 +5,10 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
 import jumbotron from "/img/jumbotron.png";
 import { useLocation } from "react-router-dom";
-import farming from "/img/farming.png";
 
 function Jumbotron() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const isAbout = location.pathname === "/about";
 
   const slides = [
     {
@@ -35,7 +33,7 @@ function Jumbotron() {
     <div
       className={`relative w-full overflow-hidden ${!isHome ? "" : "h-screen"}`}
     >
-      {isHome ? (
+      {isHome && (
         <Swiper
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
@@ -61,14 +59,6 @@ function Jumbotron() {
             </SwiperSlide>
           ))}
         </Swiper>
-      ) : (
-        <div className="relative w-full overflow-hidden">
-          <img
-            src={farming}
-            alt="Jumbotron"
-            className="w-full object-fill lg:w-full lg:h-[400px]"
-          />
-        </div>
       )}
     </div>
   );

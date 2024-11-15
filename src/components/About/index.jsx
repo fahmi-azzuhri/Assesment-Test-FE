@@ -1,13 +1,14 @@
 import React from "react";
-import Jumbotron from "../Section/Jumbotron";
 import about from "/img/about.png";
 import VisiMisi from "./VisiMisi";
 import Team from "./Team";
+import JumboWrap from "../Section/Jumbotron/JumboWrap";
+import farming from "/img/farming.png";
 
 function About() {
   return (
     <div>
-      <Jumbotron />
+      <JumboWrap img={farming} />
       <h2 className="text-primary-500 text-2xl text-center font-bold mt-4">
         Tentang Kami
       </h2>
