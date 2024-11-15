@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo_eratani from "/img/logo_eratani.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IconButton, Collapse } from "@material-tailwind/react";
 import AppRoutes from "./routes";
 import Footer from "./components/Footer";
@@ -9,17 +9,22 @@ function App() {
   const [openNav, setOpenNav] = useState(false);
 
   const textNavbar = [
-    "Beranda",
-    "Tentang Kami",
-    "Tips & Berita Pertanian",
-    "Kegiatan",
+    { label: "Beranda", path: "/" },
+    { label: "Tentang Kami", path: "/about" },
+    { label: "Tips & Berita Pertanian", path: "/tips" },
+    { label: "Kegiatan", path: "/kegiatan" },
   ];
 
   const navList = (
     <ul className="mt-2 flex flex-col text-neutral-500 gap-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {textNavbar.map((item, index) => (
-        <li key={index} className="p-1 text-blackDefault font-bold">
-          <button>{item}</button>
+        <li
+          key={index}
+          className={`p-1 ${
+            location.pathname === item.path ? "font-bold" : "font-regular"
+          } text-neutral-500 hover:text-neutral-700`}
+        >
+          <button onClick={() => navigate(item.path)}>{item.label}</button>
         </li>
       ))}
     </ul>
